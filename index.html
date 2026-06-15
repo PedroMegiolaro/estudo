@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 4</title>
+    <style>
+        #area {
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Soma ou Multiplicação</h2>
+
+    <input type="number" id="n1" placeholder="Primeiro número">
+    <input type="number" id="n2" placeholder="Segundo número">
+
+    <div id="area" onmouseover="calcular()">
+        Passe o mouse aqui
+    </div>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let n1 = Number(document.getElementById("n1").value);
+            let n2 = Number(document.getElementById("n2").value);
+
+            let resultado;
+
+            if (n1 < 0 || n2 < 0) {
+                resultado = n1 + n2;
+            } else {
+                resultado = n1 * n2;
+            }
+
+            document.getElementById("resultado").innerHTML =
+                "Resultado: " + resultado;
+        }
+    </script>
+
+</body>
+</html>

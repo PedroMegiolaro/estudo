@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro e Login</title>
+</head>
+<body>
+
+    <h1>Cadastro</h1>
+
+    <label>Nome:</label>
+    <input type="text" id="nome">
+    <br><br>
+
+    <label>Login:</label>
+    <input type="text" id="loginCadastro">
+    <br><br>
+
+    <label>Senha:</label>
+    <input type="password" id="senhaCadastro">
+    <br><br>
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="limpar()">Limpar</button>
+    <button onclick="mostrarDados()">Mostrar Dados</button>
+
+    <hr>
+
+    <h1>Login</h1>
+
+    <label>Login:</label>
+    <input type="text" id="loginLogin">
+    <br><br>
+
+    <label>Senha:</label>
+    <input type="password" id="senhaLogin">
+    <br><br>
+
+    <button onclick="fazerLogin()">Login</button>
+
+    <hr>
+
+    <div id="resultado"></div>
+
+    <script>
+        let nome = "";
+        let login = "";
+        let senha = "";
+
+        function cadastrar() {
+            let novoNome = document.getElementById("nome").value;
+            let novoLogin = document.getElementById("loginCadastro").value;
+            let novaSenha = document.getElementById("senhaCadastro").value;
+
+            if (nome !== "" || login !== "" || senha !== "") {
+                alert("Já existe um usuário cadastrado! Clique em Limpar primeiro.");
+                return;
+            }
+
+            if (novoNome === "" || novoLogin === "" || novaSenha === "") {
+                alert("Preencha todos os campos!");
+                return;
+            }
+
+            nome = novoNome;
+            login = novoLogin;
+            senha = novaSenha;
+
+            alert("Cadastro realizado com sucesso!");
+        }
+
+        function limpar() {
+            nome = "";
+            login = "";
+            senha = "";
+
+            document.getElementById("nome").value = "";
+            document.getElementById("loginCadastro").value = "";
+            document.getElementById("senhaCadastro").value = "";
+
+            document.getElementById("resultado").innerHTML = "";
+
+            alert("Dados apagados!");
+        }
+
+        function mostrarDados() {
+            if (nome === "") {
+                alert("Nenhum usuário cadastrado.");
+                return;
+            }
+
+            document.getElementById("resultado").innerHTML =
+                "<h2>Dados do Usuário</h2>" +
+                "<p><strong>Nome:</strong> " + nome + "</p>" +
+                "<p><strong>Login:</strong> " + login + "</p>" +
+                "<p><strong>Senha:</strong> " + senha + "</p>";
+        }
+
+        function fazerLogin() {
+            let loginDigitado = document.getElementById("loginLogin").value;
+            let senhaDigitada = document.getElementById("senhaLogin").value;
+
+            if (loginDigitado !== login) {
+                alert("Login incorreto!");
+                return;
+            }
+
+            if (senhaDigitada !== senha) {
+                alert("Senha incorreta!");
+                return;
+            }
+
+            alert("Login realizado com sucesso! Bem-vindo, " + nome + "!");
+        }
+    </script>
+
+</body>
+</html>

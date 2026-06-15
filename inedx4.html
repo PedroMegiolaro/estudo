@@ -1,0 +1,74 @@
+1>>>>>
+
+let somaSalarios = 0;
+let quantidadePessoas = 0;
+let maiorIdade = 0;
+let menorIdade = Infinity;
+let mulheresAte5000 = 0;
+
+let idade = parseInt(prompt("Digite a idade:"));
+
+while (idade >= 0) {
+    let sexo = prompt("Digite o sexo (M/F):").toUpperCase();
+    let salario = parseFloat(prompt("Digite o salário:"));
+
+    somaSalarios += salario;
+    quantidadePessoas++;
+
+    if (idade > maiorIdade) {
+        maiorIdade = idade;
+    }
+
+    if (idade < menorIdade) {
+        menorIdade = idade;
+    }
+
+    if (sexo === "F" && salario <= 5000) {
+        mulheresAte5000++;
+    }
+
+    idade = parseInt(prompt("Digite a idade (idade negativa encerra):"));
+}
+
+if (quantidadePessoas > 0) {
+    let mediaSalario = somaSalarios / quantidadePessoas;
+
+    console.log("Média de salário: R$ " + mediaSalario.toFixed(2));
+    console.log("Maior idade: " + maiorIdade);
+    console.log("Menor idade: " + menorIdade);
+    console.log("Quantidade de mulheres com salário até R$5000,00: " + mulheresAte5000);
+} else {
+    console.log("Nenhum dado foi informado.");
+}
+
+
+2>>>>>>
+
+) Exibir os números ímpares de 1 a 100
+for (let i = 1; i <= 100; i += 2) {
+    console.log(i);
+}
+2) Imprimir os múltiplos de 5 no intervalo de 1 até 500
+for (let i = 5; i <= 500; i += 5) {
+    console.log(i);
+}
+3) Ler um número inteiro positivo e mostrar todos os números dele até zero (decrescente)
+let numero = parseInt(prompt("Digite um número inteiro positivo:"));
+
+for (let i = numero; i >= 0; i--) {
+    console.log(i);
+}
+Versão usando while (caso o professor peça)
+let numero = parseInt(prompt("Digite um número inteiro positivo:"));
+
+while (numero >= 0) {
+    console.log(numero);
+    numero--;
+}
+Saída do exercício 3 se o usuário digitar 5:
+5
+4
+3
+2
+1
+0

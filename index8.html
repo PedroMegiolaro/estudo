@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Animação com Setas</title>
+</head>
+<body>
+
+<canvas id="tela" width="600" height="400" style="border:1px solid black;"></canvas>
+
+<script>
+    const canvas = document.getElementById("tela");
+    const ctx = canvas.getContext("2d");
+
+    let x = 300;
+    let y = 200;
+    const raio = 20;
+    const velocidade = 10;
+
+    document.addEventListener("keydown", mover);
+
+    function mover(event) {
+        if (event.key === "ArrowRight") {
+            x += velocidade;
+        }
+
+        if (event.key === "ArrowLeft") {
+            x -= velocidade;
+        }
+
+        if (event.key === "ArrowUp") {
+            y -= velocidade;
+        }
+
+        if (event.key === "ArrowDown") {
+            y += velocidade;
+        }
+    }
+
+    function desenhar() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.arc(x, y, raio, 0, 2 * Math.PI);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+
+        requestAnimationFrame(desenhar);
+    }
+
+    desenhar();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Canvas</title>
+</head>
+<body>
+
+<canvas id="tela" width="500" height="500"></canvas>
+
+<script>
+    const canvas = document.getElementById("tela");
+    const ctx = canvas.getContext("2d");
+
+    // Céu
+    ctx.fillStyle = "#8BE0C0";
+    ctx.fillRect(50, 50, 430, 430);
+
+    // Sol
+    ctx.beginPath();
+    ctx.fillStyle = "yellow";
+    ctx.arc(370, 160, 55, 0, 2 * Math.PI);
+    ctx.fill();
+
+    // Chão
+    ctx.fillStyle = "gray";
+    ctx.fillRect(100, 340, 380, 140);
+
+    // Rio
+    ctx.fillStyle = "#4A86E8";
+    ctx.beginPath();
+    ctx.moveTo(50, 280);
+    ctx.lineTo(50, 480);
+    ctx.lineTo(260, 480);
+    ctx.quadraticCurveTo(260, 430, 210, 430);
+    ctx.lineTo(100, 430);
+    ctx.lineTo(100, 340);
+    ctx.quadraticCurveTo(100, 280, 50, 280);
+    ctx.fill();
+
+    // Casa - corpo
+    ctx.fillStyle = "saddlebrown";
+    ctx.fillRect(210, 230, 110, 110);
+
+    // Telhado
+    ctx.beginPath();
+    ctx.fillStyle = "tomato";
+    ctx.moveTo(205, 230);
+    ctx.lineTo(265, 180);
+    ctx.lineTo(325, 230);
+    ctx.fill();
+
+    // Porta
+    ctx.fillStyle = "#7A4F24";
+    ctx.fillRect(250, 260, 20, 80);
+
+    // Janelas
+    ctx.fillStyle = "lightskyblue";
+    ctx.fillRect(220, 250, 30, 30);
+    ctx.fillRect(275, 250, 30, 30);
+
+    // Árvore esquerda - tronco
+    ctx.fillStyle = "saddlebrown";
+    ctx.fillRect(100, 280, 20, 60);
+
+    // Árvore esquerda - copa
+    ctx.beginPath();
+    ctx.fillStyle = "forestgreen";
+    ctx.arc(110, 260, 32, 0, 2 * Math.PI);
+    ctx.fill();
+
+    // Árvore direita - tronco
+    ctx.fillStyle = "saddlebrown";
+    ctx.fillRect(425, 330, 20, 55);
+
+    // Árvore direita - copa
+    ctx.beginPath();
+    ctx.fillStyle = "forestgreen";
+    ctx.arc(435, 315, 32, 0, 2 * Math.PI);
+    ctx.fill();
+
+    // Moldura branca
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(50, 50, 430, 430);
+</script>
+
+</body>
+</html>

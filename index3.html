@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ano de Nascimento</title>
+</head>
+<body>
+
+    <h1>Dados do Usuário</h1>
+
+    <script>
+        let nome = prompt("Digite seu nome:");
+        let idade = parseInt(prompt("Digite sua idade:"));
+        let anoAtual = parseInt(prompt("Digite o ano atual:"));
+
+        let anoNascimento = anoAtual - idade;
+
+        document.write("<h2>Olá, " + nome + "!</h2>");
+        document.write("<p>Seu ano de nascimento é: " + anoNascimento + "</p>");
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Incrementos</title>
+</head>
+<body>
+
+    <h1>Incrementos de um Número</h1>
+
+    <label>Digite um número:</label>
+    <input type="number" id="numero">
+
+    <button onclick="incrementar()">Mostrar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function incrementar() {
+            let x = Number(document.getElementById("numero").value);
+            let resultado = "";
+
+            for (let i = 1; i <= x; i++) {
+                resultado += i + "<br>";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+
+</body>
+</html>
