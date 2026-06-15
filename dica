@@ -1,0 +1,47 @@
+Entre na pasta do projeto
+cd C:\Temp\servidor
+
+(Substitua pelo caminho onde está seu projeto.)
+
+3. Crie o projeto Node (apenas uma vez)
+npm init -y
+
+Isso criará o arquivo package.json.
+
+4. Instale as dependências
+npm install express mongodb ejs body-parser colors
+
+Ao final deverá aparecer algo parecido com:
+
+added XX packages
+found 0 vulnerabilities
+5. Verifique se a estrutura está correta
+
+Sua pasta deve ficar parecida com:
+
+servidor/
+│
+├── node_modules/
+├── public/
+│   └── contato.html
+│
+├── views/
+│   ├── resposta.ejs
+│   ├── resposta_usuario.ejs
+│   └── for.ejs
+│
+├── server.js
+├── package.json
+└── package-lock.json
+6. Execute o servidor
+node server.js
+
+Se tudo estiver correto, deverá aparecer:
+
+MongoDB conectado com sucesso!
+Servidor rodando em http://localhost:3000
+7. Abra no navegador
+
+Acesse:
+
+http://localhost:3000
